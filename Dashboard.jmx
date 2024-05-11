@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Dashboard">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">15000</intProp>
+        <intProp name="ThreadGroup.ramp_time">10</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request" enabled="true">
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">orangehrm-5.6/web/index.php/dashboard/index</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\User\Desktop\Test Report\Dashboard\500000.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\User\Desktop\Test Report\Dashboard\500000.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\User\Desktop\Test Report\Dashboard\300000.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="RespTimeGraphVisualizer" testclass="ResultCollector" testname="Response Time Graph">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\User\Desktop\Test Report\Dashboard\500000.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\User\Desktop\Test Report\Dashboard\500000.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename">C:/Users/User/Desktop/Test Report/Dashboard/10000.csv</stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;jmeterTestPlan version=&quot;1.2&quot; properties=&quot;5.0&quot; jmeter=&quot;5.6&quot;&gt;
+  &lt;hashTree&gt;
+    &lt;TestPlan guiclass=&quot;TestPlanGui&quot; testclass=&quot;TestPlan&quot; testname=&quot;Test Plan&quot;&gt;
+      &lt;boolProp name=&quot;TestPlan.tearDown_on_shutdown&quot;&gt;true&lt;/boolProp&gt;
+      &lt;elementProp name=&quot;TestPlan.user_defined_variables&quot; elementType=&quot;Arguments&quot; guiclass=&quot;ArgumentsPanel&quot; testclass=&quot;Arguments&quot; testname=&quot;User Defined Variables&quot;&gt;
+        &lt;collectionProp name=&quot;Arguments.arguments&quot;/&gt;
+      &lt;/elementProp&gt;
+    &lt;/TestPlan&gt;
+    &lt;hashTree&gt;
+      &lt;Arguments guiclass=&quot;ArgumentsPanel&quot; testclass=&quot;Arguments&quot; testname=&quot;User Defined Variables&quot;&gt;
+        &lt;collectionProp name=&quot;Arguments.arguments&quot;&gt;
+          &lt;elementProp name=&quot;url&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;url&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;https://example.invalid/&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.metadata&quot;&gt;=&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+          &lt;elementProp name=&quot;contentType&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;contentType&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;application/json&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.metadata&quot;&gt;=&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+          &lt;elementProp name=&quot;method&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;method&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;POST&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.metadata&quot;&gt;=&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+          &lt;elementProp name=&quot;body&quot; elementType=&quot;Argument&quot;&gt;
+            &lt;stringProp name=&quot;Argument.name&quot;&gt;body&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.value&quot;&gt;&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;Argument.metadata&quot;&gt;=&lt;/stringProp&gt;
+          &lt;/elementProp&gt;
+        &lt;/collectionProp&gt;
+      &lt;/Arguments&gt;
+      &lt;hashTree/&gt;
+      &lt;ResultCollector guiclass=&quot;ViewResultsFullVisualizer&quot; testclass=&quot;ResultCollector&quot; testname=&quot;View Results Tree&quot;&gt;
+        &lt;boolProp name=&quot;ResultCollector.error_logging&quot;&gt;false&lt;/boolProp&gt;
+        &lt;objProp&gt;
+          &lt;name&gt;saveConfig&lt;/name&gt;
+          &lt;value class=&quot;SampleSaveConfiguration&quot;&gt;
+            &lt;time&gt;true&lt;/time&gt;
+            &lt;latency&gt;true&lt;/latency&gt;
+            &lt;timestamp&gt;true&lt;/timestamp&gt;
+            &lt;success&gt;true&lt;/success&gt;
+            &lt;label&gt;true&lt;/label&gt;
+            &lt;code&gt;true&lt;/code&gt;
+            &lt;message&gt;true&lt;/message&gt;
+            &lt;threadName&gt;true&lt;/threadName&gt;
+            &lt;dataType&gt;true&lt;/dataType&gt;
+            &lt;encoding&gt;false&lt;/encoding&gt;
+            &lt;assertions&gt;true&lt;/assertions&gt;
+            &lt;subresults&gt;true&lt;/subresults&gt;
+            &lt;responseData&gt;false&lt;/responseData&gt;
+            &lt;samplerData&gt;false&lt;/samplerData&gt;
+            &lt;xml&gt;true&lt;/xml&gt;
+            &lt;fieldNames&gt;true&lt;/fieldNames&gt;
+            &lt;responseHeaders&gt;false&lt;/responseHeaders&gt;
+            &lt;requestHeaders&gt;false&lt;/requestHeaders&gt;
+            &lt;responseDataOnError&gt;false&lt;/responseDataOnError&gt;
+            &lt;saveAssertionResultsFailureMessage&gt;true&lt;/saveAssertionResultsFailureMessage&gt;
+            &lt;assertionsResultsToSave&gt;0&lt;/assertionsResultsToSave&gt;
+            &lt;bytes&gt;true&lt;/bytes&gt;
+            &lt;sentBytes&gt;true&lt;/sentBytes&gt;
+            &lt;url&gt;true&lt;/url&gt;
+            &lt;threadCounts&gt;true&lt;/threadCounts&gt;
+            &lt;idleTime&gt;true&lt;/idleTime&gt;
+            &lt;connectTime&gt;true&lt;/connectTime&gt;
+          &lt;/value&gt;
+        &lt;/objProp&gt;
+        &lt;stringProp name=&quot;filename&quot;&gt;&lt;/stringProp&gt;
+      &lt;/ResultCollector&gt;
+      &lt;hashTree/&gt;
+      &lt;ThreadGroup guiclass=&quot;ThreadGroupGui&quot; testclass=&quot;ThreadGroup&quot; testname=&quot;Thread Group&quot; enabled=&quot;false&quot;&gt;
+        &lt;elementProp name=&quot;ThreadGroup.main_controller&quot; elementType=&quot;LoopController&quot; guiclass=&quot;LoopControlPanel&quot; testclass=&quot;LoopController&quot; testname=&quot;Loop Controller&quot;&gt;
+          &lt;intProp name=&quot;LoopController.loops&quot;&gt;-1&lt;/intProp&gt;
+        &lt;/elementProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.num_threads&quot;&gt;1&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.ramp_time&quot;&gt;2&lt;/stringProp&gt;
+        &lt;boolProp name=&quot;ThreadGroup.scheduler&quot;&gt;false&lt;/boolProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.duration&quot;&gt;&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.delay&quot;&gt;&lt;/stringProp&gt;
+      &lt;/ThreadGroup&gt;
+      &lt;hashTree&gt;
+        &lt;HTTPSamplerProxy guiclass=&quot;HttpTestSampleGui&quot; testclass=&quot;HTTPSamplerProxy&quot; testname=&quot;HTTP Request 02&quot;&gt;
+          &lt;elementProp name=&quot;HTTPsampler.Arguments&quot; elementType=&quot;Arguments&quot; guiclass=&quot;HTTPArgumentsPanel&quot; testclass=&quot;Arguments&quot; testname=&quot;User Defined Variables&quot;&gt;
+            &lt;collectionProp name=&quot;Arguments.arguments&quot;/&gt;
+          &lt;/elementProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.domain&quot;&gt;petstore.octoperf.com&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.protocol&quot;&gt;https&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.path&quot;&gt;/actions/Catalog.action?viewCategory=&amp;amp;categoryId=DOGS&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.method&quot;&gt;GET&lt;/stringProp&gt;
+          &lt;boolProp name=&quot;HTTPSampler.follow_redirects&quot;&gt;true&lt;/boolProp&gt;
+          &lt;boolProp name=&quot;HTTPSampler.use_keepalive&quot;&gt;true&lt;/boolProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.ipSource&quot;&gt;192.168.0.12&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.implementation&quot;&gt;HttpClient4&lt;/stringProp&gt;
+        &lt;/HTTPSamplerProxy&gt;
+        &lt;hashTree&gt;
+          &lt;HeaderManager guiclass=&quot;HeaderPanel&quot; testclass=&quot;HeaderManager&quot; testname=&quot;HTTP Header Manager&quot;&gt;
+            &lt;collectionProp name=&quot;HeaderManager.headers&quot;&gt;
+              &lt;elementProp name=&quot;&quot; elementType=&quot;Header&quot;&gt;
+                &lt;stringProp name=&quot;Header.name&quot;&gt;User-Agent&lt;/stringProp&gt;
+                &lt;stringProp name=&quot;Header.value&quot;&gt;ApacheJMeter&lt;/stringProp&gt;
+              &lt;/elementProp&gt;
+              &lt;elementProp name=&quot;&quot; elementType=&quot;Header&quot;&gt;
+                &lt;stringProp name=&quot;Header.name&quot;&gt;Content-Type&lt;/stringProp&gt;
+                &lt;stringProp name=&quot;Header.value&quot;&gt;${contentType}&lt;/stringProp&gt;
+              &lt;/elementProp&gt;
+            &lt;/collectionProp&gt;
+          &lt;/HeaderManager&gt;
+          &lt;hashTree/&gt;
+          &lt;XPath2Assertion guiclass=&quot;XPath2AssertionGui&quot; testclass=&quot;XPath2Assertion&quot; testname=&quot;XPath2 Assertion&quot;&gt;
+            &lt;boolProp name=&quot;XPath.negate&quot;&gt;false&lt;/boolProp&gt;
+            &lt;stringProp name=&quot;XPath.xpath&quot;&gt;/&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;XPath.namespaces&quot;&gt;href=&amp;quot;/actions/Catalog\.action;jsessionid=[A-F0-9]+\?viewProduct=&amp;amp;amp;productId=K9-PO-02&amp;quot;&amp;gt;K9-PO-02&amp;lt;&lt;/stringProp&gt;
+          &lt;/XPath2Assertion&gt;
+          &lt;hashTree/&gt;
+          &lt;JSR223PostProcessor guiclass=&quot;TestBeanGUI&quot; testclass=&quot;JSR223PostProcessor&quot; testname=&quot;JSR223 PostProcessor&quot;&gt;
+            &lt;stringProp name=&quot;cacheKey&quot;&gt;true&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;filename&quot;&gt;&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;parameters&quot;&gt;&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;script&quot;&gt;import java.text.SimpleDateFormat
+import java.util.Date
+
+// Define the desired date format
+def dateFormat = new SimpleDateFormat(&amp;quot;hh:mm:ss dd:MM:yyyy&amp;quot;)
+
+// Get the request and response timestamps
+def requestTimestamp = prev.getStartTime()
+def responseTimestamp = prev.getEndTime()
+
+// Format the timestamps
+def formattedRequestTimestamp = dateFormat.format(new Date(requestTimestamp))
+def formattedResponseTimestamp = dateFormat.format(new Date(responseTimestamp))
+
+// Log the formatted timestamps
+log.info(&amp;quot;Formatted Request Timestamp: &amp;quot; + formattedRequestTimestamp)
+log.info(&amp;quot;Formatted Response Timestamp: &amp;quot; + formattedResponseTimestamp)
+&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;scriptLanguage&quot;&gt;groovy&lt;/stringProp&gt;
+          &lt;/JSR223PostProcessor&gt;
+          &lt;hashTree/&gt;
+        &lt;/hashTree&gt;
+        &lt;ConstantThroughputTimer guiclass=&quot;TestBeanGUI&quot; testclass=&quot;ConstantThroughputTimer&quot; testname=&quot;Constant Throughput Timer&quot; enabled=&quot;false&quot;&gt;
+          &lt;intProp name=&quot;calcMode&quot;&gt;0&lt;/intProp&gt;
+          &lt;doubleProp&gt;
+            &lt;name&gt;throughput&lt;/name&gt;
+            &lt;value&gt;15.0&lt;/value&gt;
+            &lt;savedValue&gt;0.0&lt;/savedValue&gt;
+          &lt;/doubleProp&gt;
+        &lt;/ConstantThroughputTimer&gt;
+        &lt;hashTree/&gt;
+      &lt;/hashTree&gt;
+      &lt;ResultCollector guiclass=&quot;SummaryReport&quot; testclass=&quot;ResultCollector&quot; testname=&quot;Summary Report&quot;&gt;
+        &lt;boolProp name=&quot;ResultCollector.error_logging&quot;&gt;false&lt;/boolProp&gt;
+        &lt;objProp&gt;
+          &lt;name&gt;saveConfig&lt;/name&gt;
+          &lt;value class=&quot;SampleSaveConfiguration&quot;&gt;
+            &lt;time&gt;true&lt;/time&gt;
+            &lt;latency&gt;true&lt;/latency&gt;
+            &lt;timestamp&gt;true&lt;/timestamp&gt;
+            &lt;success&gt;true&lt;/success&gt;
+            &lt;label&gt;true&lt;/label&gt;
+            &lt;code&gt;true&lt;/code&gt;
+            &lt;message&gt;true&lt;/message&gt;
+            &lt;threadName&gt;true&lt;/threadName&gt;
+            &lt;dataType&gt;true&lt;/dataType&gt;
+            &lt;encoding&gt;false&lt;/encoding&gt;
+            &lt;assertions&gt;true&lt;/assertions&gt;
+            &lt;subresults&gt;true&lt;/subresults&gt;
+            &lt;responseData&gt;false&lt;/responseData&gt;
+            &lt;samplerData&gt;false&lt;/samplerData&gt;
+            &lt;xml&gt;false&lt;/xml&gt;
+            &lt;fieldNames&gt;true&lt;/fieldNames&gt;
+            &lt;responseHeaders&gt;false&lt;/responseHeaders&gt;
+            &lt;requestHeaders&gt;false&lt;/requestHeaders&gt;
+            &lt;responseDataOnError&gt;false&lt;/responseDataOnError&gt;
+            &lt;saveAssertionResultsFailureMessage&gt;true&lt;/saveAssertionResultsFailureMessage&gt;
+            &lt;assertionsResultsToSave&gt;0&lt;/assertionsResultsToSave&gt;
+            &lt;bytes&gt;true&lt;/bytes&gt;
+            &lt;sentBytes&gt;true&lt;/sentBytes&gt;
+            &lt;url&gt;true&lt;/url&gt;
+            &lt;threadCounts&gt;true&lt;/threadCounts&gt;
+            &lt;idleTime&gt;true&lt;/idleTime&gt;
+            &lt;connectTime&gt;true&lt;/connectTime&gt;
+          &lt;/value&gt;
+        &lt;/objProp&gt;
+        &lt;stringProp name=&quot;filename&quot;&gt;&lt;/stringProp&gt;
+      &lt;/ResultCollector&gt;
+      &lt;hashTree/&gt;
+      &lt;JSR223Assertion guiclass=&quot;TestBeanGUI&quot; testclass=&quot;JSR223Assertion&quot; testname=&quot;JSR223 Assertion&quot; enabled=&quot;false&quot;&gt;
+        &lt;stringProp name=&quot;cacheKey&quot;&gt;true&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;filename&quot;&gt;&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;parameters&quot;&gt;&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;script&quot;&gt;//Get the response time
+def responseTime = prev.getTime()
+
+//Define the maximum allowed response time in milliseconds
+def maxAverageResponseTime = 500
+
+
+// check if the response time is within the allowed threshold
+
+if (responseTime &amp;gt; maxAverageResponseTime) {
+	//Assertion failed, set an error message
+	AssertionResult.setFailure(true)
+	AssertionResult.setFailureMessage(&amp;quot;The transaction has crossed the SLA&amp;quot;)
+}&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;scriptLanguage&quot;&gt;groovy&lt;/stringProp&gt;
+      &lt;/JSR223Assertion&gt;
+      &lt;hashTree/&gt;
+      &lt;ThreadGroup guiclass=&quot;ThreadGroupGui&quot; testclass=&quot;ThreadGroup&quot; testname=&quot;Thread Group&quot;&gt;
+        &lt;elementProp name=&quot;ThreadGroup.main_controller&quot; elementType=&quot;LoopController&quot; guiclass=&quot;LoopControlPanel&quot; testclass=&quot;LoopController&quot; testname=&quot;Loop Controller&quot;&gt;
+          &lt;stringProp name=&quot;LoopController.loops&quot;&gt;3&lt;/stringProp&gt;
+        &lt;/elementProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.num_threads&quot;&gt;1&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.ramp_time&quot;&gt;1&lt;/stringProp&gt;
+        &lt;boolProp name=&quot;ThreadGroup.scheduler&quot;&gt;false&lt;/boolProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.duration&quot;&gt;&lt;/stringProp&gt;
+        &lt;stringProp name=&quot;ThreadGroup.delay&quot;&gt;&lt;/stringProp&gt;
+      &lt;/ThreadGroup&gt;
+      &lt;hashTree&gt;
+        &lt;HTTPSamplerProxy guiclass=&quot;HttpTestSampleGui&quot; testclass=&quot;HTTPSamplerProxy&quot; testname=&quot;HTTP Request 02&quot;&gt;
+          &lt;elementProp name=&quot;HTTPsampler.Arguments&quot; elementType=&quot;Arguments&quot; guiclass=&quot;HTTPArgumentsPanel&quot; testclass=&quot;Arguments&quot; testname=&quot;User Defined Variables&quot;&gt;
+            &lt;collectionProp name=&quot;Arguments.arguments&quot;/&gt;
+          &lt;/elementProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.domain&quot;&gt;petstore.octoperf.com&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.protocol&quot;&gt;https&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.path&quot;&gt;/actions/Catalog.action?viewCategory=&amp;amp;categoryId=DOGS&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.method&quot;&gt;GET&lt;/stringProp&gt;
+          &lt;boolProp name=&quot;HTTPSampler.follow_redirects&quot;&gt;true&lt;/boolProp&gt;
+          &lt;boolProp name=&quot;HTTPSampler.use_keepalive&quot;&gt;true&lt;/boolProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.ipSource&quot;&gt;192.168.0.12&lt;/stringProp&gt;
+          &lt;stringProp name=&quot;HTTPSampler.implementation&quot;&gt;HttpClient4&lt;/stringProp&gt;
+        &lt;/HTTPSamplerProxy&gt;
+        &lt;hashTree&gt;
+          &lt;HeaderManager guiclass=&quot;HeaderPanel&quot; testclass=&quot;HeaderManager&quot; testname=&quot;HTTP Header Manager&quot;&gt;
+            &lt;collectionProp name=&quot;HeaderManager.headers&quot;&gt;
+              &lt;elementProp name=&quot;&quot; elementType=&quot;Header&quot;&gt;
+                &lt;stringProp name=&quot;Header.name&quot;&gt;User-Agent&lt;/stringProp&gt;
+                &lt;stringProp name=&quot;Header.value&quot;&gt;ApacheJMeter&lt;/stringProp&gt;
+              &lt;/elementProp&gt;
+              &lt;elementProp name=&quot;&quot; elementType=&quot;Header&quot;&gt;
+                &lt;stringProp name=&quot;Header.name&quot;&gt;Content-Type&lt;/stringProp&gt;
+                &lt;stringProp name=&quot;Header.value&quot;&gt;${contentType}&lt;/stringProp&gt;
+              &lt;/elementProp&gt;
+            &lt;/collectionProp&gt;
+          &lt;/HeaderManager&gt;
+          &lt;hashTree/&gt;
+          &lt;XPath2Assertion guiclass=&quot;XPath2AssertionGui&quot; testclass=&quot;XPath2Assertion&quot; testname=&quot;XPath2 Assertion&quot;&gt;
+            &lt;boolProp name=&quot;XPath.negate&quot;&gt;false&lt;/boolProp&gt;
+            &lt;stringProp name=&quot;XPath.xpath&quot;&gt;/&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;XPath.namespaces&quot;&gt;href=&amp;quot;/actions/Catalog\.action;jsessionid=[A-F0-9]+\?viewProduct=&amp;amp;amp;productId=K9-PO-02&amp;quot;&amp;gt;K9-PO-02&amp;lt;&lt;/stringProp&gt;
+          &lt;/XPath2Assertion&gt;
+          &lt;hashTree/&gt;
+          &lt;JSR223PostProcessor guiclass=&quot;TestBeanGUI&quot; testclass=&quot;JSR223PostProcessor&quot; testname=&quot;JSR223 PostProcessor&quot;&gt;
+            &lt;stringProp name=&quot;cacheKey&quot;&gt;true&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;filename&quot;&gt;&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;parameters&quot;&gt;&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;script&quot;&gt;import java.text.SimpleDateFormat
+import java.util.Date
+
+
+// Define the desired date format with milliseconds
+def dateFormat = new SimpleDateFormat(&amp;quot;hh:mm:ss.SSS dd:MM:yyyy&amp;quot;)
+
+// Get the request and response timestamps
+def requestTimestamp = prev.getStartTime()
+def responseTimestamp = prev.getEndTime()
+
+
+// Get the latency
+def latency = prev.getLatency()
+
+
+// Get the request number from the sampler label
+def requestNumber = prev.getSampleLabel()
+
+
+// Format the timestamps
+def formattedRequestTimestamp = dateFormat.format(new Date(requestTimestamp))
+def formattedResponseTimestamp = dateFormat.format(new Date(responseTimestamp))
+
+
+// Log the data
+log.info(&amp;quot;Request Number: &amp;quot; + requestNumber)
+log.info(&amp;quot;Formatted Request Timestamp: &amp;quot; + formattedRequestTimestamp)
+log.info(&amp;quot;Formatted Response Timestamp: &amp;quot; + formattedResponseTimestamp)
+log.info(&amp;quot;Latency: &amp;quot; + latency + &amp;quot; ms&amp;quot;)
+
+
+// Write to CSV file
+def csvData = requestNumber + &amp;quot;,&amp;quot; + formattedRequestTimestamp + &amp;quot;,&amp;quot; + formattedResponseTimestamp + &amp;quot;,&amp;quot; + latency
+new File(&amp;apos;output.csv&amp;apos;) &amp;lt;&amp;lt; csvData + System.getProperty(&amp;apos;line.separator&amp;apos;)
+
+
+&lt;/stringProp&gt;
+            &lt;stringProp name=&quot;scriptLanguage&quot;&gt;groovy&lt;/stringProp&gt;
+          &lt;/JSR223PostProcessor&gt;
+          &lt;hashTree/&gt;
+        &lt;/hashTree&gt;
+      &lt;/hashTree&gt;
+    &lt;/hashTree&gt;
+  &lt;/hashTree&gt;
+&lt;/jmeterTestPlan&gt;</stringProp>
+        </JSR223Listener>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

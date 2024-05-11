@@ -1,0 +1,6 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+http://localhost/orangehrm-5.6/web/index.php/auth/validate,1000,28170,3661,43414,11141.19,0.000%,19.20455,93.87,26.16,5005.0
+http://localhost/orangehrm-5.6/web/index.php/auth/validate-0,1000,11701,382,26817,7692.47,0.000%,27.42882,24.99,20.65,933.0
+http://localhost/orangehrm-5.6/web/index.php/auth/validate-1,1000,16468,1872,26721,5545.34,0.000%,19.90050,79.14,12.13,4072.0
+Test,1000,28170,3661,43414,11141.19,0.000%,19.14902,93.59,26.09,5005.0
+TOTAL,4000,21127,382,43414,11704.22,0.000%,76.59460,280.78,78.26,3753.8

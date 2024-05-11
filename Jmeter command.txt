@@ -1,0 +1,23 @@
+location :CD E:\apache-jmeter-5.6.3\bin
+
+jmeter -n -t(location of jmx file) -l (result location)
+
+jmeter -n -t(location of jmx file) -l (result location path.csv)
+
+1.Command For dashboard: jmeter -n -t "C:\Users\User\Desktop\Test Report\Assignment\Admin.jmx" -l "C:\Users\User\Desktop\test_results.csv"
+
+jmeter -n -t"C:\Users\User\Desktop\Test Report\Assignment\Directory\directory.jmx" -l "C:\Users\User\Desktop\Test Report\Assignment\Directory\1000.csv"
+
+
+xcel sheet :
+Total response =countif()
+
+
+Average Latency :=AVERAGE(O2:O100429)
+
++>jmeter -n -t"C:\Users\User\Desktop\Test Report\Assignment\adminlogin\Admin.jmx" -l "C:\Users\User\Desktop\Test Report\test_results(500).csv"
+
+
+
+==>jmeter -n -t "C:\Users\User\Desktop\Test Report\Assignment\Add Employe\AddEmployee.jmx" -l "C:\Users\User\Desktop\Test Report\Assignment\test_result_1300.csv"
+
